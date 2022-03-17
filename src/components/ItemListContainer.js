@@ -1,10 +1,7 @@
 import React from "react";
 
-function ItemListContainer () {
-    return (
-      <h1>Item list container</h1>
-    )
-      
-  }
+function ItemListContainer(props) {
+  return <h1>Bienvenido!</h1>;
+}
 
 export default ItemListContainer;
