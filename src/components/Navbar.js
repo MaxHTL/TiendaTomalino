@@ -1,5 +1,8 @@
 import React from "react";
 import logoNav from "../images/logo-nav.png";
+import CartWidget from './CartWidget';
+
+const itemsDropdown = ['Remeras', 'Peluches', 'Almohadas'];
 
 const Navbar = () => {
     return (
@@ -11,21 +14,28 @@ const Navbar = () => {
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav">
+
               <li class="nav-item">
                 <a class="nav-link active" aria-current="page" href="#">Home</a>
               </li>
+
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Productos
                 </a>
-                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">                  
+                {
+                      itemsDropdown.map(item => {  
+                        return (
+                              <li><a class="dropdown-item" href="#">{item}</a></li>   
+                        )
+                      })
+                }
                 </ul>
               </li>
+
               <li class="nav-item position-absolute end-0">
-                <a class="nav-link" href="#">Contacto</a>
+                <a class="nav-link" href="#"> <CartWidget/> </a>
               </li>
             </ul>
           </div>
